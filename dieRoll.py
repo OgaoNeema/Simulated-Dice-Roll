@@ -8,7 +8,7 @@ total = 0
 percentage_total = 0
 
 for number in random_numbers:
-    if 0 < number < 1/6 : #if the no lies between 0 and 1/6, increase the frequency of face 1(index 0) by 1
+    if 0 < number < 1/6 : #Check if the random no generated lies between 0 and 1/6, increase the frequency of face 1(index 0) by 1
         frequency[1] += 1
     elif 1/6 < number < 2/6:
         frequency[2] += 1
@@ -27,7 +27,7 @@ print("-" * 25) #Line separator
 
 for face, freq in frequency.items():
     percentage = (freq / 10) # calculated the % using this instead of (freq / 1000) * 100
-    
+
     print(f"{face:<6}   {freq:<10}{percentage:.1f}%") #Print out the values
     percentage_total += percentage #Updating the total % after each iteration
     total += freq #Total frequency
