@@ -1,10 +1,9 @@
 import random #For generating random numbers
 
-#Define the random number generated
-random_numbers = [random.random() for _ in range(1000)] #A list of the 100 random numbers
+#Generated the random numbers
+random_numbers = [random.random() for _ in range(1000)] #A list of the 1000 random numbers between 0 and 1
 
-#Frequency of occurrence of a face
-frequency = {i: 0 for i in range(1, 7)} #for the 6 faces
+frequency = {i: 0 for i in range(1, 7)} #Initialize the frequency of all 6 faces to 0
 total = 0
 percentage_total = 0
 
@@ -23,13 +22,14 @@ for number in random_numbers:
         frequency[6] += 1
 
 #Results
-print(f"{'Face':<5}{'Frequency':<10}{'Percentage'}")
-print("-" * 25)
-for face, freq in frequency.items():
-    percentage = (freq / 10) # instead of (freq / 1000) * 100
-    print(f"{face:<5}   {freq:<10}{percentage:.1f}%")
-    percentage_total += percentage
-    total += freq
+print(f"{'Face':<6}{'Frequency':<10}{'Percentage'}") #Aligning the headers with respective character spaces
+print("-" * 25) #Line separator
 
-print("-" * 25)
-print(f"{'Total:':<5}   {total:<10}{percentage_total:.1f}%")
+for face, freq in frequency.items():
+    percentage = (freq / 10) # calculated the % using this instead of (freq / 1000) * 100
+    print(f"{face:<6}   {freq:<10}{percentage:.1f}%") #Print out the values
+    percentage_total += percentage
+    total += freq #Total frequency
+
+print("-" * 25)#Line separator
+print(f"{'Total:':<6}   {total:<10}{percentage_total:.1f}%") #% to 1 d.p
