@@ -27,8 +27,9 @@ print("-" * 25) #Line separator
 
 for face, freq in frequency.items():
     percentage = (freq / 10) # calculated the % using this instead of (freq / 1000) * 100
+    
     print(f"{face:<6}   {freq:<10}{percentage:.1f}%") #Print out the values
-    percentage_total += percentage
+    percentage_total += percentage #Updating the total % after each iteration
     total += freq #Total frequency
 
 print("-" * 25)#Line separator
